@@ -1,38 +1,190 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'DM Sans', sans-serif;
+}
+/*logo*/
+.logo{
+  background-color: #292929;
+  padding: 20px;
+}
+.logo img{
+  margin-left: 30px;
+}
+.hero-section{
+  min-height:550px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.hero-content{
+  width: 85%;
+  margin: auto;
+}
+.hero-content h1{
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 93.74px;
+}
+.hero-content span{
+  display: block;
+}
+.filter-bar{
+  width: 85%;
+  margin: auto;
+  margin-top: 30px;
+}
+.filter-bar label{
+  display: block;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 7px;
+}
+#search{
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+}
+.card-item{
+ width: 100%;
+}
+.card-main{
+  width: 85%;
+  margin: auto;
+  margin-top: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.card-section{
+  display:grid;
   align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.movie-container{
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+  z-index: 1;
+}
+.movie-name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  flex-direction: column;
+}
+.movie-name button{
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background-color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  text-transform: capitalize;
+  border: none;
+  box-shadow: 0 0 7px rgba(128, 128, 128, 0.733);
+  border-radius: 4px;
+  height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.movie-name:hover button{
+  height: 3rem;
+  padding: 10px;
+}
+.movie-container img{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.error{
+  color: red;
+  font-size: 1.1rem;
+  text-align: start;
+}
+.genre-link{
+  margin-left: 20px;
+  display: inline-block;
+  color: #000;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.genre-link:hover{
+  text-decoration: underline;
+}
+.select{
+  margin-top: 40px;
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+@media screen and (max-width:834px) {
+  .hero-section{
+    text-align: center;
+    justify-content: center;
+  }
+  .card-section{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .movie-name{
+    font-size: 1.1rem;
+  }
+  .genre-link{
+    display: inline-block;
+  }
+  .select{
+    font-size: 2.4rem;
+  }
+  .logo img{
+   width: 120px;
+  }
+}
+@media screen and (max-width:600px) {
+  .hero-content span{
+    display: inline-block;
+    font-size: 38px;
+    margin-left: 10px;
+  }
+  .hero-content h1{
+    line-height: 3rem;
+  }
+  .card-section{
+    grid-template-columns: 1fr 1fr;
+  }
+  .movie-name{
+    font-size: 1.2rem;
+  }
+  .genre-link{
+    display: block;
+    width: fit-content;
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+  .genre{
+    text-align: start;
+    display: block;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
